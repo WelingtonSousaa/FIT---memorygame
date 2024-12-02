@@ -1,0 +1,23 @@
+-- Criação do banco de dados
+CREATE DATABASE IF NOT EXISTS memory_game;
+USE memory_game;
+
+-- Tabela de usuários
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    last_acess_date DATE DEFAULT NULL,
+    best_time TIME DEFAULT NULL
+);
+
+-- Índice único para garantir que usernames sejam únicos
+CREATE UNIQUE INDEX idx_username ON users (username);
+
+-- Índice para consultas pela última data de acesso
+CREATE INDEX idx_last_access_date ON users (last_acess_date);
+
+-- Índice para consultas pelo melhor tempo
+CREATE INDEX idx_best_time ON users (best_time);
+
+select * from users;
