@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Histórico - Fit Memory Game</title>
+    <script src="../assets/css/cdn/tailwindcss/3.4.17.js"></script>
+    <link rel="stylesheet" href="../assets/css/background.css">
+    <style type="text/tailwindcss">
+        /* --- Estilos dos Botões de Aba (Tabs) --- */
+        .tab-button {
+            @apply px-6 py-2 font-semibold text-gray-600 border border-gray-300 rounded-t-lg;
+            @apply transition-colors duration-200;
+            margin-bottom: -1px; 
+        }
+        .tab-button.active {
+            @apply bg-white text-blue-600 border-b-white border-blue-600 border-t-2 border-l-2 border-r-2;
+        }
+        .tab-button:not(.active):hover {
+            @apply bg-gray-50;
+        }
+        .tab-content {
+            @apply border-t border-gray-300 p-4;
+        }
+
+        /* --- Estilos da Lista de Ranking --- */
+        .ranking-list {
+            @apply space-y-3;
+        }
+        .ranking-item {
+            @apply flex items-center justify-between p-3 bg-gray-50 rounded-lg shadow-sm transition-transform duration-200 hover:scale-[1.02];
+        }
+        .ranking-item .rank-position {
+            @apply text-lg font-bold text-gray-500 w-8 text-center;
+        }
+        .ranking-item .rank-name {
+            @apply flex-1 ml-4 text-lg font-semibold text-gray-800;
+        }
+        .ranking-item .rank-score {
+            @apply text-xl font-bold text-blue-600;
+        }
+        .ranking-item .crown-icon {
+            @apply w-6 h-6 mr-2;
+        }
+
+        /* --- Estilos Top 3 --- */
+        .ranking-item.rank-1 {
+            @apply bg-yellow-100 border-2 border-yellow-400 shadow-lg;
+        }
+        .ranking-item.rank-1 .rank-position { @apply text-yellow-600; }
+        .ranking-item.rank-1 .rank-name { @apply text-yellow-800; }
+        .ranking-item.rank-1 .crown-icon { @apply text-yellow-500; }
+        .ranking-item.rank-2 {
+            @apply bg-gray-200 border border-gray-400 shadow-md;
+        }
+        .ranking-item.rank-2 .rank-position { @apply text-gray-600; }
+        .ranking-item.rank-2 .rank-name { @apply text-gray-700; }
+        .ranking-item.rank-2 .crown-icon { @apply text-gray-500; }
+        .ranking-item.rank-3 {
+            @apply bg-orange-100 border border-orange-300 shadow-sm;
+        }
+        .ranking-item.rank-3 .rank-position { @apply text-orange-600; }
+        .ranking-item.rank-3 .rank-name { @apply text-orange-700; }
+        .ranking-item.rank-3 .crown-icon { @apply text-orange-500; }
+
+        /* --- Estilos da Lista de Histórico --- */
+        .history-list {
+            @apply space-y-4;
+        }
+        .history-item {
+            @apply p-4 bg-white border border-gray-200 rounded-lg shadow-sm;
+            @apply grid grid-cols-3 gap-4 items-center;
+        }
+        .history-item .difficulty {
+            @apply text-sm font-semibold text-gray-700 capitalize;
+        }
+        .history-item .time {
+            @apply text-lg font-bold text-blue-600 text-center;
+        }
+        .history-item .score {
+            @apply text-lg font-semibold text-gray-800 text-right;
+        }
+    </style>
+</head>
+<body class="background flex flex-col min-h-screen">
+
+    <div id="header-placeholder"></div>
+
+    <main class="flex-grow container mx-auto p-4 flex items-center justify-center">
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg w-full max-w-2xl">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">MEU HISTÓRICO</h2>
+            <p class="text-center text-gray-600 mb-6">Suas partidas recentes, ordenadas por melhor tempo.</p>
+
+            <div class="history-list">
+                <div class="history-item bg-gray-100 font-bold">
+                    <span class="difficulty">Dificuldade</span>
+                    <span class="time">Tempo</span>
+                    <span class="score">Pontuação</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/site/header.js"></script>
+    <script src="../assets/js/site/footer.js"></script>
+    <script src="../assets/js/page/history.js"></script>
+    </body>
+</html>
