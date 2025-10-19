@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit Memory Game - Autenticação</title>
+    <script src="./assets/css/cdn/tailwindcss/3.4.17.js"></script>
+    <link rel="stylesheet" href="./assets/css/background.css">
+    <style>
+        .form-field { transition: all 0.3s ease-in-out; max-height: 100px; overflow: hidden; opacity: 1; margin-bottom: 1rem; }
+        .form-field.hidden { max-height: 0; margin-bottom: 0; opacity: 0; }
+        #vinculo-field.form-field.hidden { margin-bottom: 0 !important; }
+        #vinculo-field.form-field { margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen py-8 background">
+
+    <main class="bg-white p-8 rounded-xl shadow-lg w-full max-w-sm">
+        
+        <div class="flex items-center justify-center gap-4 mb-8">
+            <img src="./assets/image/site/Fit2025_logo.jpeg" alt="Logo Fit Memory Game" class="h-14 w-14 rounded-md object-cover bg-gray-800">
+            <div>
+                <h1 class="text-xl font-bold text-gray-800">Fit Memory Game</h1>
+                <p id="form-subtitle" class="text-sm text-gray-500">Faça login para continuar</p>
+            </div>
+        </div>
+
+        <form id="auth-form">
+            <h2 id="form-title" class="text-2xl font-semibold mb-6 text-gray-700">Login</h2>
+            
+            <div id="nome-field" class="form-field hidden">
+                <input type="text" id="name" name="name" placeholder="Nome Completo" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-4">
+                <input type="text" id="student_id" name="student_id" placeholder="Matrícula" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-6">
+                <input type="password" id="password" name="password" placeholder="Senha" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div id="vinculo-field" class="form-field hidden flex items-center">
+                <input id="is_ufc_student" name="is_ufc_student" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                <label for="is_ufc_student" class="ml-2 block text-sm text-gray-800">Possui vínculo com a UFC?</label>
+            </div>
+
+            <p id="error-message" class="text-red-500 text-sm mb-4 text-center hidden"></p>
+            
+            <button id="submit-button" type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition">
+                Entrar
+            </button>
+        </form>
+
+        <p class="text-center text-sm text-gray-600 mt-6">
+            <span id="toggle-prose">Não tem uma conta?</span>
+            <a href="#" id="toggle-link" class="font-medium text-blue-600 hover:underline">Cadastre-se</a>
+        </p>
+
+        <div id="footer-placeholder"></div>
+    </main>
+    
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/site/footer.js"></script>
+    <script src="./assets/js/site/auth.js"></script>
+</body>
+</html>

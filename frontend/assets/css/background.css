@@ -1,0 +1,20 @@
+body.background::before {
+    content: "";                            /* Essencial para o pseudo-elemento funcionar */
+    position: fixed;                        /* Fixa a imagem para não rolar com a página */
+    top: 0;
+    left: 0;
+    width: 100vw;                           /* 100% da largura da tela */
+    height: 100vh;                          /* 100% da altura da tela */
+    
+    /* ---   IMAGEM   --- */
+    background-image: url('../image/site/background.jpeg');
+    
+    background-size: cover;                 /* Faz a imagem cobrir toda a tela */
+    background-position: center center;     /* Centraliza a imagem */
+    background-repeat: no-repeat;           /* Evita que a imagem se repita */
+
+    /* --- TRANSPARÊNCIA --- */
+    opacity: 0.15;                         /* Valor de 0.0 (invisível) a 1.0 (totalmente visível) */
+
+    z-index: -1;                            /* Joga a imagem para trás de todo o conteúdo */
+}

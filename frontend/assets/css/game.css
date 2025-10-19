@@ -1,0 +1,122 @@
+/** Estilos do Tabuleiro */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /*! 8 colunas */
+    gap: 8px;
+    perspective: 1000px; 
+}
+
+/** Estilos das Cartas */
+.memory-card {
+    width: 100%;
+    aspect-ratio: 2 / 3; 
+    background-color: #1a73e8; 
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.memory-card .card-front,
+.memory-card .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; 
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+/*! Verso da carta */
+.memory-card .card-back {
+    background-color: #1a73e8;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/** Frente da carta (imagem) */
+.memory-card .card-front {
+    background-color: #f0f0f0; /** Fundo claro para a imagem */
+    transform: rotateY(180deg); /** Gira a frente para ficar "atrás" */
+}
+
+.memory-card .card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*! Faz a imagem cobrir a carta */
+}
+
+/*TODO --- Animações --- */
+
+/** Animação de Virar a Carta */
+.memory-card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/** Animação de Acerto */
+.memory-card.is-matched {
+    transform: rotateY(180deg) scale(1.05); /** Mantém virada e dá um leve zoom */
+    box-shadow: 0 0 15px rgba(40, 187, 99, 0.7); /** Brilho verde */
+    cursor: default;
+}
+.memory-card.is-matched .card-front {
+    opacity: 0.8; /** Leve fade para mostrar que foi acertada */
+}
+
+/* Log de Histórico */
+#history-log {
+    /*? height: 300px; */
+    flex-grow: 1;
+    min-height: 200px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse; /*! Mensagens novas aparecem embaixo e empurram as velhas */
+}
+
+#history-log p {
+    margin: 0 0 8px 0;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    animation: fadeIn 0.5s ease;
+}
+
+/** Estilos das Mensagens do Histórico */
+.log-win {
+    background-color: #e6f7eb;
+    color: #1e8e3e;
+    font-weight: 600;
+}
+
+.log-lose {
+    background-color: #fce8e6;
+    color: #d93025;
+    font-weight: 600;
+}
+
+.log-info {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+
+/** Animação de entrada da mensagem */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

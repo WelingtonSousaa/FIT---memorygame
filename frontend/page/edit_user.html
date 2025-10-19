@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil - Fit Memory Game</title>
+    <script src="../assets/css/cdn/tailwindcss/3.4.17.js"></script>
+    <link rel="stylesheet" href="../assets/css/background.css">
+
+    <link href="../assets/css/cdnjs/cloudflare/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+    <script src="../assets/css/cdnjs/cloudflare/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+</head>
+<body class="background flex flex-col min-h-screen">
+
+    <div id="header-placeholder"></div>
+
+    <main class="flex-grow container mx-auto p-4 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-lg">
+            
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Editar Meu Perfil</h2>
+
+            <div class="flex flex-col items-center mb-8">
+                <img class="h-24 w-24 rounded-full object-cover border-4 border-gray-200" src="https://i.pinimg.com/736x/70/36/16/703616232c255231e835b6f3b558572c.jpg" alt="Avatar atual">
+                <button id="change-avatar-button" class="mt-4 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                    Alterar Avatar
+                </button>
+            </div>
+
+            <form id="edit-profile-form">
+                <div class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nome:</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">E-mail:</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">Nova Senha:</label>
+                        <input type="password" id="password" name="password" placeholder="Deixe em branco para não alterar" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div class="flex items-center">
+                        <input id="vinculo_ufc" name="is_ufc_student" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <label for="vinculo_ufc" class="ml-2 block text-sm text-gray-800">Sou aluno(a) da UFC</label>
+                    </div>
+                    <div>
+                        <label for="matricula" class="block text-sm font-medium text-gray-700">Matrícula:</label>
+                        <input type="text" id="matricula" name="student_id" class="mt-1 block w-full bg-gray-100 px-4 py-2 border border-gray-300 rounded-lg" readonly>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <button type="submit" class="w-full py-3 px-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors">
+                        Salvar Alterações
+                    </button>
+                </div>
+
+                <div class="mt-4">
+                    <a href="/page/inicio.html" class="block w-full text-center py-3 px-4 bg-gray-500 text-white font-bold rounded-lg hover:bg-gray-600 transition-colors">
+                        Voltar e Cancelar
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <div id="crop-modal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md transform transition-all">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-xl font-bold text-blue-600">RECORTAR IMAGEM</h3>
+                <button id="modal-close-button" class="text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
+            </div>
+
+            <div class="p-6">
+                <div class="flex justify-center items-center bg-gray-100 rounded-lg overflow-hidden" style="min-height: 250px;">
+                    <img id="image-to-crop" src="https://i.pinimg.com/736x/70/36/16/703616232c255231e835b6f3b558572c.jpg" alt="Pré-visualização para recorte" class="max-w-full max-h-80 hidden">
+                    <span id="crop-placeholder-text" class="text-gray-500">Carregue uma imagem para recortar</span>
+                </div>
+                <input type="file" id="avatar-upload-input" class="hidden" accept="image/*">
+                </div>
+
+            <div class="flex justify-end gap-4 p-4 bg-gray-50 rounded-b-xl">
+                <button id="modal-cancel-button" class="px-6 py-2 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300 transition-colors">
+                    Cancelar
+                </button>
+                <button id="modal-confirm-button" class="px-6 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors">
+                    Confirmar Corte
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/site/header.js"></script>
+    <script src="../assets/js/site/footer.js"></script>
+    <script src="../assets/js/page/edit_user.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<header class="bg-slate-100 shadow-md">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+        <a href="/page/inicio.html" class="text-2xl font-bold text-blue-600 tracking-wide">FIT 2025</a>
+
+        <div class="relative">
+            <button id="user-menu-button" class="block rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <img id="user-avatar" class="h-10 w-10 rounded-full object-cover" src="https://via.placeholder.com/40" alt="Avatar do usuário">
+            </button>
+
+            <div id="user-menu" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl z-20 p-4 border">
+                <div class="flex justify-between items-center border-b pb-2 mb-2">
+                    <h2 class="text-lg font-bold text-blue-600">MENU</h2>
+                    <button id="user-menu-close" class="text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
+                </div>
+                
+                <div class="text-sm text-gray-700 mb-4">
+                    <p id="welcome-text">Bem-vindo!</p>
+                </div>
+
+                <nav class="flex flex-col gap-2">
+                    <a id="edit-profile-link" href="/page/edit_user.html" class="flex items-center gap-3 p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                        <span>Editar Perfil</span>
+                    </a>
+                    
+                    <a href="/page/ranking.html" class="flex items-center gap-3 p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <span>Ranking Geral</span>
+                    </a>
+
+                    <a href="/page/history.html" class="flex items-center gap-3 p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Meu Histórico</span>
+                    </a>
+
+                    <a id="logout-button" href="#" class="flex items-center gap-3 p-2 mt-2 bg-red-600 text-white font-bold rounded-md hover:bg-red-700 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        <span>Sair</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </nav>
+</header>
